@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_3</title>
+</head>
+
+<body>
+
+
+    <button onclick="count()" id="btn1">Click here</button>
+  
+
+    <p><h1><i></i></h1></p>
+    <script>
+    let cnt =0
+    function count(){
+        if(cnt==10)
+        return
+        cnt++;
+        document.getElementsByTagName("p")[0].innerText="count is :"+cnt
+
+    }
+</script>
+</body>
+</html>

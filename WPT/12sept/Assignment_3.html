@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <input type="number" placeholder="Enter number" id="num1">
+    <button onclick="addAtEnd()" > Add at End</button>
+    <button onclick="addAtStart()">Add at Start</button>
+    <button onclick="deleteFromStart()">Delete From start</button>
+    <button onclick="deleteFromEnd()">Delete From End</button>
+    <button onclick="displayOddNum()">Display odd numbers</button>
+    <button onclick="displayEvenNum()">Display even numbers</button>
+
+    <script>
+
+        const a=[];
+        function addAtEnd(){
+            let x = document.getElementById("num1").value;
+            a.push(x);
+            show(a);
+            
+        }
+        
+           function addAtStart(){
+            let x = document.getElementById("num1").value;
+            a.unshift(x);
+            show(a);
+            
+        }
+
+           function deleteFromStart(){
+            a.shift();
+            show(a);
+            
+        }
+           function deleteFromEnd(){
+            a.pop();
+            console.log(a)
+            show(a);
+            
+        }
+           function displayEvenNum(){
+            let even =a.filter(e=> e%2==0)
+            show(even);
+            
+        }
+          function displayOddNum(){
+            let x = document.getElementById("num1").value;
+           let y = a.filter(e=> e%2!=0)
+            show(y);
+          }
+        function show(z){
+            document.getElementsByTagName("div").innerHTML+="<p>"+z+"</p>";
+        }
+
+    </script>
+</body>
+</html>

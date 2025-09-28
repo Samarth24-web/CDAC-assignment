@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word game</title>
+    <style>
+        td{
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgb(0, 0, 0);
+            margin-left: 20px;
+            color: rgba(250, 7, 7, 0.986);
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="word">Enter a 5 letter the word : </label>
+    <input type="text" name="word" id="word" min="5" max="5"> <br>
+    <button onclick="clickEvent()">Enter</button>
+    <h1 id="error"></h1>
+     <table id="table">
+        <tr class="row">
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+        </tr>
+        <tr class="row">
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+        </tr>
+        <tr class="row">
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+        </tr>
+        <tr class="row">
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+        </tr>
+        <tr class="row">
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+            <td class="col"></td>
+        </tr>
+     </table>
+
+     <table id="keybord" style="margin-top: 100px;">
+        <tr>
+            <td id="a">a</td>
+            <td id="b">b</td>
+            <td id="c">c</td>
+            <td id="d">d</td>
+            <td id="e">e</td>
+            <td id="f">f</td>
+            <td id="g">g</td>
+            <td id="h">h</td>
+            <td id="i">i</td>
+            <td id="j">j</td>
+        </tr>
+        <tr>
+            <td id="k">k</td>
+            <td id="l">l</td>
+            <td id="m">m</td>
+            <td id="n">n</td>
+            <td id="o">o</td>
+            <td id="p">p</td>
+            <td id="q">q</td>
+            <td id="r">r</td>
+            <td id="s">s</td>
+            <td id="t">t</td>
+        </tr>
+        <tr>
+            <td id="u">u</td>
+            <td id="v">v</td>
+            <td id="w">w</td>
+            <td id="x">x</td>
+            <td id="y">y</td>
+            <td id="z">z</td>
+        </tr>
+     </table>
+    <script src="word.js"></script>
+</body>
+</html>

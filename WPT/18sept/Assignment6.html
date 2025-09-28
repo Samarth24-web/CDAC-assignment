@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+        }
+        .blue{
+          background-color:blue;  
+        }
+        .red{
+          background-color:red;  
+        }
+        .purple{
+          background-color:purple;  
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button id="add">add class</button>
+    <button id="remove">remove class</button>
+    <button id="tog">toggle</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(()=>{
+        $("#add").click(()=>{
+            console.log(1);
+            $("div").addClass("blue");
+        })
+        $("#remove").click(()=>{
+            console.log(1);
+            $("div").removeClass("blue");
+        })
+        $("#tog").click(()=>{
+            console.log(1);
+            $("div").toggleClass("red");
+        })
+    })
+</script>
+</html>

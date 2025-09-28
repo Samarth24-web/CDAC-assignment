@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 500px;
+        height: 500px;
+        position: relative;
+    }
+    div{
+        height: 100px;
+        width:100px ;
+        transition: ease-in all 1s;
+    }
+    #div1{
+        position: absolute;
+        background-color: red;
+    }
+    #div2{
+        position: absolute;
+        background-color: red;
+    }
+
+</style>
+<body>
+    <div id="div1">
+      div1
+    </div>
+
+    <div id="div2">
+      div2
+    </div>
+</body>
+<script>
+   let div1 = document.getElementById("div1");
+let div2 = document.getElementById("div2");
+let count = 1;
+let x =0 
+setInterval(() => {
+    console.log(1)
+    if(x==2900){
+    count = (count + 1) % 4;
+    x=0
+    }
+
+    // Reset all positions
+    div1.style.top = div1.style.bottom = div1.style.left = div1.style.right = "";
+    div2.style.top = div2.style.bottom = div2.style.left = div2.style.right = "";
+
+    if (count === 1) {
+        div1.style.top = x+"px";
+        div1.style.left = "0px";
+        div2.style.top = "0px";
+        div2.style.right = x+"px";
+    } else if (count === 2) {
+        div1.style.bottom = "0px";
+        div1.style.left = x+"px";
+        div2.style.top = x+"px";
+        div2.style.left = "0px";
+    } else if (count === 3) {
+        div1.style.bottom = x+"px";
+        div1.style.right = "0px";
+        div2.style.bottom = "0px";
+        div2.style.left = x+"px";
+    } else if (count === 0) {
+        div1.style.top = "0px";
+        div1.style.right =x+"px";
+        div2.style.bottom = x+"px";
+        div2.style.right = "0px";
+    }
+    x++;
+}, 1);
+
+</script>
+</html>

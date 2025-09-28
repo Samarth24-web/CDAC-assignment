@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let data ={};
+       let promise = new Promise( (res , rej)=>{
+         let x = new XMLHttpRequest();
+        x.open( "GET", "https://jsonplaceholder.typicode.com/posts")
+        x.send();
+        x.onload=()=>{
+            data = x.responseText;
+            if(x.status==200){
+                return res(data);
+            }
+            else return rej("error");
+        }
+       })
+
+       promise.then((da)=>{
+        console.log(da);
+       })
+       .catch(e=>{
+        {
+        console.log(e);
+       }
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    div{
+        height: 100px;
+        width: 100px;
+    }
+    .red{
+        background-color: red;
+    }
+     .blue{
+        background-color: blue;
+    }
+</style>
+<body>
+
+    <div class="red">
+
+    </div>
+    <button onclick="changeC()">change</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+    <script>
+         function changeC (){
+           if($("div").hasClass("red")){
+            $("div").removeClass("red")
+            $("div").addClass("blue")
+           }
+           else{
+            {
+            $("div").removeClass("blue")
+            $("div").addClass("red")
+           }
+           }
+         }
+
+    </script>
+</body>
+</html>

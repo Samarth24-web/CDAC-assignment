@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="firstName">Enter your first name :</label>
+    <input type="text" name="name" id="firstName"> <br>
+    <label for="lastName">Enter your last name :</label>
+    <input type="text" name="lastName" id="lastName"> <br>
+    <label for="email">Enter your email id :</label>
+    <input type="number" name="email" id="email"><br>
+    <button onclick="Register()">Register</button>
+
+    <h1 id="error" style="color: rgb(26, 25, 25);"></h1>
+</body>
+<script>
+
+    let fname = document.getElementById("firstName");
+    let lname = document.getElementById("lastName");
+    let email = document.getElementById("email");
+    let btn = document.getElementById("btn");
+    let error=document.getElementById("error");
+
+    function Register(){
+        let f=fname.value;
+        if(f==""){
+            error.innerText="first name is empty";
+            return;
+        }
+        let l=lname.value;
+        if(l==""){
+            error.innerText="last name is empty";
+            return;
+        }
+        let e=email.value;
+        if(f==""){
+            error.innerText="email is empty";
+            retrun;
+        }
+
+        error.innerText="your password is : "+ f.slice(0 , 1)+l.slice(0 , 1)+e;
+        
+    }
+
+
+</script>
+</html>

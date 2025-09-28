@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="firstName">Enter your first name :</label>
+    <input type="text" name="name" id="firstName"> <br>
+    <label for="lastName">Enter your last name :</label>
+    <input type="text" name="lastName" id="lastName"> <br>
+    <label for="email">Enter your email id :</label>
+    <input type="email" name="email" id="email"><br>
+    <button onclick="Register()">Register</button>
+    <button onclick="getJSON()">JSON</button>
+
+    <h1 id="error" style="color: red;"></h1>
+
+    <table id="table" style="margin-top: 50px;">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th> Email </th>
+        </thead>
+    </table>
+</body>
+<script>
+
+    let fname = document.getElementById("firstName");
+    let lname = document.getElementById("lastName");
+    let email = document.getElementById("email");
+    let btn = document.getElementById("btn");
+    let error=document.getElementById("error");
+    let table = document.getElementById("table")
+
+
+
+    let registory={};
+    let entry={
+        firstName:"",
+        lastName:"",
+        email:""
+    }
+    let i=1;
+    function Register(){
+        let f=fname.value;
+        if(f==""){
+            error.innerText="first name is empty";
+            return;
+        }
+        let l=lname.value;
+        if(l==""){
+            error.innerText="last name is empty";
+            return;
+        }
+        let e=email.value;
+        if(f==""){
+            error.innerText="email is empty";
+            retrun;
+        }
+
+        table.innerHTML+="<tr><td>"+f+"</td><td>"+l+"</td><td>"+e+"</td></tr>";
+
+        entry.firstName=f;
+        entry.lastName=l;
+        entry.email=e;
+
+        registory["entry"+i]=entry;
+        i++;
+        
+        fname.value="";
+        lname.value="";
+        email.value="";
+    }
+
+    function getJSON(){
+        console.log(JSON.stringify(registory));
+    }
+
+</script>
+</html>

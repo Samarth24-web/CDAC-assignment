@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="/creat">
+        <div>
+            <label for="head">
+                Enter title
+            </label>
+            <input type="text" name="head" id="IP">
+        </div>
+        <div>
+            <textarea name="task" id="TA"></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+    <div class="container text-center">
+
+  <div class="row">
+    <% tasks.forEach(function(task, i)  %>
+
+      <div class="card col" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= task %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+        </div>
+      </div>
+
+      <% if ((i + 1) % 3 === 0) { %>
+        </div><div class="row">
+      <% } %>
+
+    <% }); %>
+  </div>
+
+</div>
+
+</body>
+
+</html>

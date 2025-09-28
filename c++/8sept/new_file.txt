@@ -1,0 +1,5 @@
+hi ...
+writing in a new file 
+Writing without loosing previous data
+This is new line
+--------------

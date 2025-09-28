@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="displayInterval">
+
+    </h1>
+    <h1 id="displayTimeOut">
+
+    </h1>
+
+    <script>
+        let count =0;
+        let displayInterval = document.getElementById("displayInterval");
+        let displayTimeOut = document.getElementById("displayTimeOut");
+
+        let interval = setInterval(()=>{
+            if(count==3){
+                clearInterval(interval);
+            }
+            count++;
+            displayInterval.innerHTML=count;
+        } , 1000)
+
+        setTimeout(()=>{
+            displayTimeOut.innerText="Timeout";
+            console.log(displayTimeOut);
+        } , 5000)
+
+    </script>
+</body>
+</html>

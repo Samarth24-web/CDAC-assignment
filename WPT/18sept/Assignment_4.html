@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que_4</title>
+</head>
+<body>
+    <label for="name">Enter name</label>
+    <input type="text" id="n1" name="name" required maxlength="12" minlength="4">
+    <button id="btn1" >Display</button>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(()=>{
+        $("#btn1").click(()=>{
+            let x = document.getElementById("n1");
+            if(!x.checkValidity()){
+                console.log(x.validationMessage);
+            }
+        })
+    })
+</script>
+</body>
+</html>

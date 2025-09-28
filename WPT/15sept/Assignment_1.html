@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="firstname">Enter the First name :</label>
+    <input type="text" name="firstname" id="firstname" placeholder="Enter your first name"><br><br>
+    <label for="lastname">Enter the last name :</label>
+    <input type="text" name="lastname" id="lastname" placeholder="Enter your last name"><br><br>
+    <label for="name">Enter the email :</label>
+    <input type="email" name="email" id="email" placeholder="Enter your name"><br><br>
+    <label for="dob">Enter Date of birth :</label>
+    <input type="date" name="dob" id="dob" placeholder="Enter your Date of birth"><br><br>
+    <button id="b1" onclick="validate()">Submit</button>
+    <div id="error"></div>
+    <table id="d1">
+        <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email ID</td>
+            <td>Date of Birth</td>
+            <td>Delete</td>
+            <td>Edit</td>
+        </thead>
+
+    </table>
+    <script>
+
+        let x = document.getElementById("d1");
+        let y = document.getElementById("error");
+       // console.log(x);
+
+
+        function validate() {
+            let fname = document.getElementById("firstname").value;
+
+            let lname = document.getElementById("lastname").value;
+            let email = document.getElementById("email").value;
+            let dob = document.getElementById("dob").value;
+
+
+            if (fname == "") {
+                y.innerHTML = "Enter first name"
+                return;
+            }
+            if (lname == "") {
+                y.innerHTML = "Enter last name"
+                return;
+            }
+            if (email == "") {
+                y.innerHTML = "Email Address is manadatory"
+                return;
+            }
+            if (dob == "") {
+                y.innerHTML = "Plese enter valid dob"
+                return;
+            }
+            console.log(fname)
+
+            document.getElementById("d1").innerHTML+="<tr> <td>"+fname+"</td>" +"<td>"+lname+"</td>" +"<td>"+email+"</td>" +"<td>"+dob+"</td>" +"<td>"+ "<button  onclick='deleteRow(this)'>Delete</button>"+"</td>" + "<td> <button ' onclick='editData(this)'>Edit</button></td></tr>"
+
+             document.getElementById("firstname").value="";
+
+             document.getElementById("lastname").value="";
+             document.getElementById("email").value="";
+             document.getElementById("dob").value="";
+                
+        }
+        function deleteRow(event){
+            // let btn = event.target;
+            let row = event.parentNode.parentNode
+            console.log(row);
+            let table= row.parentNode
+            table.removeChild(row)
+        }
+        function editData(event){
+          //  let btn = event.target;
+            let row = event.parentNode.parentNode
+            
+         //   console.log(row.cells[0]);
+            let fname= prompt("Enter new first name" , row.cells[0].innerHTML);
+            let lname= prompt("Enter new last name" , row.cells[1].innerHTML);
+            let email= prompt("Enter new email name" , row.cells[2].innerHTML);
+            let dob= prompt("Enter new dob" , row.cells[3].innerHTML);
+
+            row.innerHTML="<td>"+fname+"</td>" +"<td>"+lname+"</td>" +"<td>"+email+"</td>" +"<td>"+dob+"</td>" +"<td>"+ "<button  onclick='deleteRow(this)'>Delete</button>"+"</td>" + "<td> <button ' onclick='editData(this)'>Edit</button></td>";
+
+        }
+    </script>
+</body>
+
+</html>

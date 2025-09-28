@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num">Enter a number : </label>
+    <input type="number" name="num"><br>
+    <button id="btn">Submit</button>
+
+    <h1 id="print"></h1>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#btn").click(()=>{
+                if($("input").val()==""){
+                $("#print").html(`Enter a number`);   
+                return; 
+                }
+                let num=Number.parseInt($("input").val());
+                let x=getFactorial(num);
+               $("#print").html(`Factorial of ${num} is ${x}`);
+               $("input").val("");
+            })
+            
+        })
+
+        function getFactorial(x){
+            let ans=1;
+            for(let i=2 ; i<=x ; i++){
+                ans=ans*i;
+            }
+            return ans;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="area" id="ta"></textarea>
+     <br>
+     <label for="num">Enter No of Division</label>
+     <input type="number" id="num">
+     <button id="submit">Submit</button>
+
+     <div id="d1">
+
+     </div>
+     <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+     <script>
+        $(document).ready(()=>{
+            $("#submit").click(()=>{
+                $("#d1").html("");
+
+                let ta =$("#ta");
+            let string = $("#ta").val();
+            let num= $("#num").val();
+            if(string ==" " || num=="" ){
+                $("#d1").html("<h1> Empty String or  number</h1>");
+            }
+            else{
+                let divs= string.length / num;
+                let rem = string.length % num;
+                let add=0;
+                if(rem>0){
+                    add=1;
+                }
+
+                let s=0;
+                let e=0;
+
+                for(let i=0 ; i<=num ; i++){
+                    s=e;
+                    e=(divs+add)*(i+1);
+
+                    let str=string.slice(s , e);
+                     if(rem>0){
+                        rem--;
+                        add=1;
+                     }else{add=0}
+
+                     $("#d1").append(`<p> ${str} </p>`)
+                     
+                }
+
+
+            }
+            })
+        })
+     </script>
+</body>
+</html>

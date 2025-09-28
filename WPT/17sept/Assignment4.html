@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <button id="random">Start</button>
+    <button id="stop">Stop</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            let interval;
+            $("#random").click(() => {
+              interval=setInterval(()=>{
+                  let top = Math.floor(Math.random() * 500);
+                let bottom = Math.floor(Math.random() * 500);
+                let left = Math.floor(Math.random() * 500);
+                let right = Math.floor(Math.random() * 500);
+                console.log(1)
+                $("#div").animate({
+                    top: top,
+                    left: left
+                }, 1000);
+              } , 1100)
+              interval();
+            })
+
+            $("#stop").click(() => {
+                $("div").stop();
+                
+                clearInterval(interval);
+            })
+        })   
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="p1">Hello</p>
+    <p id="p2">Hello</p>
+    <button>Change Style</button>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(()=>{
+            $("button").click(()=>{
+                $("#p1").css({
+                    "font-style":"italic"
+                })
+                $("#p2").css({
+                    "text-decoration":"underline"
+                })
+            })
+        })
+    </script>
+</body>
+</html>

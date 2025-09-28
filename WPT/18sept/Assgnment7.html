@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        div{
+            height: 20px;
+            width: 200px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <table>
+        <tr>
+            <td ><button class="btn">1</button></td>
+            <td ><button class="btn">2</button></td>
+            <td ><button class="btn">3</button></td>
+            <td ><button class="btn">+</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btn">4</button></td>
+            <td ><button class="btn">5</button></td>
+            <td ><button class="btn">6</button></td>
+            <td ><button class="btn">-</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btn">7</button></td>
+            <td ><button class="btn">8</button></td>
+            <td ><button class="btn">9</button></td>
+            <td ><button class="btn">*</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btn">0</button></td>
+            <td ><button id="clear">ac</button></td>
+            <td ><button id="calc">=</button></td>
+            <td ><button class="btn">/</button></td>
+        </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(()=>{
+            $(".btn").click(()=>{
+                let x= event.target.innerHTML;
+                $("div").append(x);
+            })
+            $("#calc").click(()=>{
+                let v=$("div").html();
+                let x= eval(v)
+                $("div").html(x);
+            })
+            $("#clear").click(()=>{
+                $("div").html("");
+            })
+        })
+        
+    </script>
+</body>
+</html>

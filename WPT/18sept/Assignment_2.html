@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        td,tr{
+            border: 2px solid ;
+        }
+    </style>
+</head>
+<body>
+    <P id="p1"></P>
+    <table id="t11" style="border-collapse: collapse;">
+        <thead><td>ID</td><td>Title</td></thead>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+<script>
+   
+    let data={};
+     let x= new XMLHttpRequest();
+     x.open("GET","https://jsonplaceholder.typicode.com/posts/" , true);
+     x.send();
+     x.onload= function(){
+        let dataJson =this.responseText;
+        data=JSON.parse(dataJson);
+         for(let i of data){
+            $("#t11").append(`<tr><td> ${i.id}</td><td> ${i.title}</td></tr>`)
+       }
+     }
+     
+
+     console.log(data);
+    
+</script>
+</body>
+</html>
